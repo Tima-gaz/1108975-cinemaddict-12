@@ -1,7 +1,7 @@
 # Личный проект «Киноман» [![Build status][travis-image]][travis-url]
 
 * Студент: [Темир Газизов](https://up.htmlacademy.ru/ecmascript/12/user/1108975).
-* Наставник: `Неизвестно`.
+* Наставник: [Убайд Исаев](https://htmlacademy.ru/profile/id1340949).
 
 ---
 
