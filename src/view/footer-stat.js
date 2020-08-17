@@ -1,7 +1,10 @@
+import {getRandomInteger} from "../utils.js";
+
 export const createFooterStatTemplate = ()=> {
+  const randomStat = getRandomInteger(10000, 300000);
   return (
     `<section class="footer__statistics">
-    <p>130 291 movies inside</p>
+    <p>${randomStat} movies inside</p>
   </section>`
   );
 };
