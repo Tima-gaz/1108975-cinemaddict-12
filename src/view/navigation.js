@@ -1,4 +1,6 @@
-export const createNavigationTemplate = (filterMock)=> {
+import {createElement} from "../utils.js";
+
+const createNavigationTemplate = (filterMock)=> {
   const {historyAmount, favouritesAmount, watchlistAmount} = filterMock;
   return (
     `<nav class="main-navigation">
@@ -12,3 +14,25 @@ export const createNavigationTemplate = (filterMock)=> {
   </nav>`
   );
 };
+
+export default class Navigation {
+  constructor(nav) {
+    this._nav = nav;
+    this._element = null;
+  }
+
+  getTemplate() {
+    return createNavigationTemplate(this._nav);
+  }
+
+  getElement() {
+    if (!this._element) {
+      this._element = createElement(this.getTemplate());
+    }
+    return this._element;
+  }
+
+  removeElement() {
+    this._element = null;
+  }
+}
