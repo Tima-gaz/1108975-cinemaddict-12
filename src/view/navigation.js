@@ -1,4 +1,4 @@
-import {createElement} from "../utils.js";
+import AbstractView from "./abstract.js";
 
 const createNavigationTemplate = (filterMock)=> {
   const {historyAmount, favouritesAmount, watchlistAmount} = filterMock;
@@ -15,24 +15,13 @@ const createNavigationTemplate = (filterMock)=> {
   );
 };
 
-export default class Navigation {
+export default class Navigation extends AbstractView {
   constructor(nav) {
+    super();
     this._nav = nav;
-    this._element = null;
   }
 
   getTemplate() {
     return createNavigationTemplate(this._nav);
-  }
-
-  getElement() {
-    if (!this._element) {
-      this._element = createElement(this.getTemplate());
-    }
-    return this._element;
-  }
-
-  removeElement() {
-    this._element = null;
   }
 }
