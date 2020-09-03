@@ -1,3 +1,4 @@
+import SortView from "./view/sort.js";
 import NavigationView from "./view/navigation.js";
 import ProfileView from "./view/profile.js";
 import {generateFilm} from "./mock/film-card.js";
@@ -15,6 +16,7 @@ render(siteHeaderElement, new ProfileView().getElement(), RenderPosition.BEFOREE
 
 const siteMainElement = document.querySelector(`.main`);
 render(siteMainElement, new NavigationView(filterMocks).getElement(), RenderPosition.BEFOREEND);
+render(siteMainElement, new SortView().getElement(), RenderPosition.BEFOREEND);
 const siteFooterElement = document.querySelector(`.footer`);
 
 const movieListPresenter = new MovieListPresenter(siteMainElement, siteFooterElement);
