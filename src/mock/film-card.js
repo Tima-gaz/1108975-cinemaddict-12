@@ -1,4 +1,4 @@
-import {getRandomInteger} from "../utils.js";
+import {getRandomInteger} from "../utils/common.js";
 
 const MAX_RATING = 9;
 const BEGINNING_OF_CINEMA = 1920;
