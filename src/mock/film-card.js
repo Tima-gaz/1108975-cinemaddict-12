@@ -4,6 +4,8 @@ const MAX_RATING = 9;
 const BEGINNING_OF_CINEMA = 1920;
 const CURRENT_YEAR = 2020;
 
+const generateId = () => Date.now() + parseInt(Math.random() * 10000, 10);
+
 const mockText = [
   `Lorem ipsum dolor sit amet, consectetur adipiscing elit.`,
   `Cras aliquet varius magna, non porta ligula feugiat eget.`,
@@ -173,6 +175,7 @@ const generateActors = () => {
 
 export const generateFilm = () => {
   return {
+    id: generateId(),
     title: generateTitle(),
     originalTitle: generateTitle(),
     poster: generatePoster(),
@@ -187,6 +190,10 @@ export const generateFilm = () => {
     writers: generateWriters(),
     actors: generateActors(),
     country: generateCountry(),
-    age: generateAge()
+    age: generateAge(),
+    isFavorite: Boolean(getRandomInteger(0, 1)),
+    isInWatchlist: Boolean(getRandomInteger(0, 1)),
+    isWatched: Boolean(getRandomInteger(0, 1)),
+    emoji: ``
   };
 };
